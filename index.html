@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Welcome to Kawre540 Adventures</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+	<!--------------------------------Checkpoint -1----------------------------------------->
+
+
+	<!--------------------------------Navbar Start----------------------------------------->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"> <img src="images/logo-image.png" alt="Logo-img"> </a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link href=" #"><i class="fa-solid fa-house"></i> Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Book"><i class="fa-solid fa-calendar-day"></i> Book</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#Packages" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							<i class="fa-solid fa-plane"></i> Packages
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">United States</a></li>
+							<li><a class="dropdown-item" href="#">India</a></li>
+							<li><a class="dropdown-item" href="#">France</a></li>
+							<li><a class="dropdown-item" href="#">Germany</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"><i class="fa-solid fa-handshake"></i> Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"><i class="fa-solid fa-info-circle"></i> About</a>
+					</li>
+				</ul>
+				<span class="navbar-text">
+					<a class="btn btn-outline-primary" href="login.html"><i class="fa-solid fa-sign-in-alt"></i>
+						Login</a>
+					<a class="btn btn-outline-success ml-2" href="register.html"><i class="fa-solid fa-user-plus"></i>
+						Register</a>
+				</span>
+			</div>
+		</div>
+	</nav>
+
+	<!--------------------------------Navbar End----------------------------------------->
+
+	<!--------------------------------bg Image thing----------------------------------------->
+
+	<div class="jumbotron">
+		<img src="images/bg-img.png" alt="Jumbotron Image" class="jumbotron-img">
+		<div class="jumbotron-text">
+			<h2 class="welcome-msg"> Welcome to Kawre540 Adventures </h2>
+			<h1 id="dynamic-heading">Visit <span id="placename">India</span></h1>
+			<button class="book-now-button">Book Now</button>
+		</div>
+	</div>
+
+	<!--------------------------------bg Image thing End----------------------------------------->
+
+	<!--------------------------------Checkpoint -2-------------------------------------------->
+
+	<section id="services" class="py-5" style="background-color:#f8f9fa;">
+		<div class="container">
+			<div class="row h-100">
+				<!-- Left Side: Image Section -->
+				<div class="col-md-6 img-section">
+					<img src="images/bg-left2.avif" alt="Brand Image">
+				</div>
+
+				<!-- Right Side: Form Section -->
+				<div class="col-md-6 padd">
+					<div class="form-section">
+						<h1 class="text-center mb-4" style="color: #004063; font-weight: 600;">Booking <span
+								style="color: #ff5f6d;">Form</span></h1>
+						<form id="bookingForm">
+							<div class="mb-3">
+								<label for="destination" class="form-label">Where to</label>
+								<select id="destination" class="form-select" required>
+									<option value="" disabled selected>Select a destination</option>
+									<option value="Paris">Paris</option>
+									<option value="New York">New York</option>
+									<option value="Tokyo">Tokyo</option>
+									<option value="Sydney">Sydney</option>
+									<option value="Dubai">Dubai</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label for="personCount" class="form-label">How Many Persons</label>
+								<input type="number" id="personCount" class="form-control" min="1" required>
+							</div>
+							<div class="mb-3">
+								<label for="startDate" class="form-label">Start Date</label>
+								<input type="date" id="startDate" class="form-control" min="2024-10-03" required>
+							</div>
+							<div class="mb-3">
+								<label for="endDate" class="form-label">End Date</label>
+								<input type="date" id="endDate" class="form-control" required>
+							</div>
+							<div class="mb-3">
+								<label for="description" class="form-label">Description</label>
+								<textarea id="description" class="form-control" rows="4" minlength="50" maxlength="500"
+									required></textarea>
+							</div>
+							<button type="submit" class="btn btn-nice">Book Now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="services" style="background-color:#f8f9fa; font-family: 'Sacramento', cursive;">
+		<div class="container" id="Packages" style="padding-top: 20px;">
+			<h1 class="text-center mb-5" style="font-weight: bold; color: #343a40;">Our <span
+					style="color: #ff5f6d;">Package</span></h1>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place1.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Paris, France</h3>
+							<p class="attractions">Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Seine River
+								Cruises.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place2.jpg" alt="Place 1" class="package-image">
+							<h3 class="place-name">Tokyo, Japan</h3>
+							<p class="attractions">Tokyo Tower, Sensoji Temple, Shibuya Crossing, Meiji Shrine.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place3.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">New York, USA</h3>
+							<p class="attractions">Statue of Liberty, Central Park, Times Square, Empire State Building.
+							</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place4.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Rome, Italy</h3>
+							<p class="attractions">Colosseum, Vatican City, Roman Forum, Trevi Fountain.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place5.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Sydney, Australia</h3>
+							<p class="attractions">Sydney Opera House, Bondi Beach, Taronga Zoo, Bondi Beach .</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place6.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Dubai, UAE</h3>
+							<p class="attractions">Burj Khalifa, Palm Jumeirah, Dubai Mall, Desert Safari.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place7.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Kathmandu, Nepal</h3>
+							<p class="attractions">Pashupatinath Temple, Boudhanath Stupa, Swayambhunath, Pokhara, Mount
+								Everest.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place8.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">London, UK</h3>
+							<p class="attractions">Big Ben, London Eye, Tower of London, Buckingham Palace.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center">
+						<div class="card-body">
+							<img src="images/place9.avif" alt="Place 1" class="package-image">
+							<h3 class="place-name">Santorini, Greece</h3>
+							<p class="attractions">Oia Village, Red Beach, Akrotiri Archaeological Site, Santorini
+								Caldera.</p>
+							<p class="price">Price: $1200 USD</p>
+							<p class="rating">Rating:
+								<span class="stars">
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star"></i>
+									<i class="far fa-star-half-alt"></i>
+									<!-- Half star for 4.5 rating -->
+								</span>
+							</p>
+							<button class="book-now-btn">Book Now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="services" style="background-color:#f8f9fa; font-family: 'Sacramento';">
+		<div class="container py-5" id="Services">
+			<h1 class="text-center mb-5" style="font-weight: bold; color: #343a40;">Our <span
+					style="color: #ff5f6d;">Services</span></h1>
+			<div class="row">
+				<!-- Service 1 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center">
+							<i class="fas fa-dollar fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">Affordable Hotel</h5>
+							<p class="card-text attractions">Find budget-friendly hotels that provide comfort and
+								convenience during your stay.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Service 2 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center">
+							<i class="fas fa-wine-glass fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">Food & Drinks</h5>
+							<p class="card-text attractions">Enjoy delicious meals and beverages at our partnered
+								restaurants and cafes.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Service 3 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center">
+							<i class="fas fa-fingerprint fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">Safety Guide</h5>
+							<p class="card-text attractions">Stay safe with our well-planned guides and recommendations
+								for your travels.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<!-- Service 4 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center">
+							<i class="fas fa-suitcase fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">Travel Insurance</h5>
+							<p class="card-text attractions">We offer reliable travel insurance for worry-free vacations
+								and adventures.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Service 5 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center">
+							<i class="fas fa-headset fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">24/7 Customer Support</h5>
+							<p class="card-text attractions">Reach out to our customer support team anytime for
+								assistance during your trip.</p>
+						</div>
+					</div>
+				</div>
+				<!-- Service 6 -->
+				<div class="col-md-4 mb-4">
+					<div class="card h-100 border-0 shadow-sm">
+						<div class="card-body text-center ">
+							<i class="fas fa-hiking fa-3x mb-3 mt-3"></i>
+							<h5 class="card-title place-name">Adventure Tours</h5>
+							<p class="card-text attractions">Explore thrilling adventure tours and activities tailored
+								for adventure seekers.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!---------------------------------------------------------Checkpoint-3------------------------------------------------------------->
+	<section id="services" class="py-3" style="background-color:#f8f9fa; font-family: 'Afacad Flux';">
+		<div class="container">
+			<h1 class="text-center mb-5" style="font-weight: bold; text-align: center; color: #343a40;">Our <span
+					style="color: #ff5f6d;">Gallery</span></h1>
+			<div id="servicesCarousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<!-- First Slide -->
+					<div class="carousel-item active">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t1.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t2.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t3.avif">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Second Slide -->
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t4.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t5.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t6.avif">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Second Slide -->
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t7.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t8.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t9.avif">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Second Slide -->
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t10.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t11.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t12.avif">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Second Slide -->
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t13.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t14.avif">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<img src="images/t15.avif">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Carousel Controls -->
+					<a class="carousel-control-prev" href="#servicesCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#servicesCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+	</section>
+
+	<!-- About Us Section -->
+	<section id="about-us" class="container my-3" style="background-color:#f8f9fa;">
+		<h1 class="text-center mb-5" style="font-weight: bold; text-align: center; color: #343a40;">About <span
+				style="color: #ff5f6d;">Us</span></h1>
+		<div class="row  border-0">
+			<!-- Left Column: Image -->
+			<div class="col-lg-6 mb-4 mb-lg-0 align-items-center">
+				<img src="images/about-img.avif" alt="About Us"
+					class="img-fluid rounded shadow-lg w-100 cursor-pointer">
+			</div>
+			<!-- Right Column: Text Content -->
+			<div class="col-lg-6 justifying">
+				<p class="font-weight-bold" style="font-size: 1.3rem; color: #343a40;">
+					<strong>Established:</strong> 2024
+				</p>
+				<p style="line-height: 1.6; color: #555;">
+					We are a dedicated company committed to providing the best products and services to our customers.
+					Our team consists of experienced professionals who are passionate about their work.
+				</p>
+				<p style="line-height: 1.6; color: #555;">
+					At <strong>Kawre540 Adventures</strong>, we believe in quality and customer satisfaction. Our vision
+					is to become a leader in our industry by continually improving our products and services.
+				</p>
+				<p style="line-height: 1.6; color: #555;">
+					For more information, feel free to <a href="#"
+						style="color: #ff5f6d; text-decoration: none;">contact us</a> or visit our website.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer Section -->
+	<footer class="footer">
+		<div class="container">
+			<div class="brand-name">Ｋａｗｒｅ５４０ Ａｄｖｅｎｔｕｒｅｓ</div>
+			<div class="social-icons">
+				<a href="#" class="fab fa-facebook-f"></a>
+				<a href="#" class="fab fa-instagram"></a>
+				<a href="#" class="fab fa-twitter"></a>
+				<a href="#" class="fab fa-linkedin-in"></a>
+			</div>
+			<div class="copyright">
+				&copy; 𝟸𝟶𝟸𝟺 𝙺𝚊𝚠𝚛𝚎𝟻𝟺𝟶 𝙰𝚍𝚟𝚎𝚗𝚝𝚞𝚛𝚎𝚜. 𝙰𝚕𝚕 𝚁𝚒𝚐𝚑𝚝𝚜 𝚁𝚎𝚜𝚎𝚛𝚟𝚎𝚍.
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

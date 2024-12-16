@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+        body {
+            background-image: url('images/green.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Afacad Flux", system-ui;
+        }
+
+        .form-container {
+            background: transparent;
+            backdrop-filter: blur(20px) brightness(1.1);
+            padding: 20px;
+            color: #9F997A;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            color: #9F997A;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #141825;
+            color: #9F997A;
+        }
+
+        .btn-primary:hover {
+            background-color: #9F997A;
+            color: #141825;
+            font-weight: 600;
+        }
+
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #9F997A;
+            font-weight: 500;
+        }
+
+        .login-link:hover {
+            color: #D98E57;
+            font-weight: 600;
+            text-decoration: none;
+
+        }
+
+        .sp {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fullname">Full Name <span class="sp">*</span></label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="contact">Contact <span class="sp">*</span></label>
+                    <input type="tel" class="form-control" id="contact" placeholder="Enter your contact number"
+                        required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="dob">Date of Birth <span class="sp">*</span></label>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email ID <span class="sp">*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="password">Password <span class="sp">*</span></label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gender">Gender <span class="sp">*</span></label>
+                    <select class="form-control" id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <a href="login.html" class="login-link">Already have an account? Login here</a>
+        </form>
+    </div>
+
+    <!-- JavaScript for Bootstrap and Validation -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function validateForm() {
+            const fullname = document.getElementById("fullname").value;
+            const contact = document.getElementById("contact").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const dob = document.getElementById("dob").value;
+
+            const namePattern = /^[A-Za-z\s]+$/; // Only alphabets and spaces
+            const contactPattern = /^[0-9]{10}$/;
+            const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Email must end with @gmail.com
+
+            if (!namePattern.test(fullname)) {
+                alert("Full Name must contain only letters and spaces, without numbers or special characters.");
+                return false;
+            }
+
+            if (!contactPattern.test(contact)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            if (!gmailPattern.test(email)) {
+                alert("Please enter a valid Gmail address ending with @gmail.com.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            // DOB validation for 18+ age
+            const birthDate = new Date(dob);
+            const today = new Date();
+            const age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            const dayDiff = today.getDate() - birthDate.getDate();
+
+            if (age < 18 || (age === 18 && (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)))) {
+                alert("You must be at least 18 years old to register.");
+                return false;
+            }
+
+            alert("Registration successful!");
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

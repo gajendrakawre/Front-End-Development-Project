@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f8f9fa ;
+}
+
+.bg-custom {
+  background-color: #0F0F0F ;
+}
+
+.navbar-brand img {
+  height: 50px; 
+  width: auto;
+  transition: transform 0.3s ease;  
+}
+
+.navbar-brand img:hover {
+ transform: scale(1.05);
+}
+
+.navbar-text a {
+  margin-right: 10px;
+  color: #DAC67C !important;
+  font-weight: 600;
+  border: none;
+}
+
+.navbar-text a:hover {
+  background-color: #DAC67C !important;
+  color: #0F0F0F !important;
+
+}
+
+.nav-link {
+  color: #DAC67C !important;
+  font-weight: 600;
+  margin-right: 10px;
+  border: none;
+  transition: all 0.3s ease-in-out; 
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #DAC67C;
+  color: #0F0F0F !important;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out; 
+}
+
+/* Existing styles */
+.dropdown-menu {
+  background-color: #DAC67C;
+  color: #0F0F0F !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: none; 
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block; 
+}
+
+.dropdown-item {
+  background-color: #DAC67C;
+  color: #0F0F0F !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 150px;
+  font-weight: 600;
+  margin-left: 4px;
+  border-radius: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: #0F0F0F;
+  color: #DAC67C !important;
+}
+
+.jumbotron {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  background-color: #0F0F0F;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.jumbotron-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain; 
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+}
+
+.jumbotron-img:hover {
+  transform: scale(1.1); 
+  opacity: 0.9; 
+}
+
+.jumbotron-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.jumbotron-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.welcome-msg {
+  color: #B59153;
+  font-weight: 600;
+
+}
+
+#dynamic-heading {
+  color: #B59153;
+  font-size: 2.5em; 
+  margin-top: 20px;
+}
+#placename {
+  display: inline-block;
+  width: 100px; 
+  color: #800020;
+  text-align: center;
+}
+
+.book-now-button {
+  background-color: #B59153; 
+  color: #0F0F0F; 
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px; 
+  transition: all 0.5s ease-in-out; 
+}
+
+.book-now-button:hover {
+  transform: scale(1.1); 
+}
+
+
+.navbar-toggler {
+  border:none;
+  color:#CDB26B !important;
+  background-color: #CDB26B !important; 
+}
+
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23DAC67C' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  
+}
+
+
+
+.form-section {
+  background-color: #f8f9fa;
+  border: 2px solid #000;
+  padding: 20px;
+  font-weight: 600;
+  color: #004063;
+  height: 100%;
+  border-radius: 8px;
+  font-family: "Afacad Flux", system-ui;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.img-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.img-section img {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.btn-nice{
+  background-color: #004063;
+  color: #f8f9fa;
+}
+.btn-nice:hover{
+  color: #FF8E01 !important;
+}
+
+
+.card-body {
+  padding: 15px;
+}
+
+.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Navbar custom styling */
+.navbar {
+  background-color: #0F0F0F;
+  padding: 10px 20px;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+/* Dropdown menu adjustments */
+.dropdown-item {
+  font-size: 14px;
+}
+
+
+
+/* Container full width */
+#Packages {
+  width: 100%;
+}
+
+/* H1 Styling */
+#Packages h1,  #Services h1  {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Afacad Flux", system-ui;
+  color: #FF8E01;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+#Packages h1 span, #Services h1 span {
+  color: #004063;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.package-image {
+  width: 100%;
+  height: auto;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.place-name {
+  font-size: 1.5rem;
+  font-family: "Afacad Flux", system-ui;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.attractions, .price, .rating {
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-family: "Afacad Flux", system-ui;
+}
+
+/* Rating styling */
+.stars i {
+  color: #000; /* black color for stars */
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+/* Button styling */
+.book-now-btn {
+  background: white;
+  border: none;
+  color: #000;
+  padding: 8px 20px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  font-family: "Afacad Flux", system-ui;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.book-now-btn:hover {
+  background: #385db0;
+  font-weight: 600;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .padd{
+    margin-top: 20px;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 0); }
+  25% { transform: translate(-1px, 0); }
+  50% { transform: translate(1px, 0); }
+  75% { transform: translate(-1px, 0); }
+  100% { transform: translate(1px, 0); }
+}
+
+.card-body i:hover {
+  animation: shake 0.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.card-body i {
+  opacity: 0.5; 
+}
+
+/*------------------------------checkpoint-3----------------------------------------*/
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  padding: 10px; 
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: none; 
+  background-color: black; 
+  opacity: 0.5;
+  border-radius: 50%; 
+  padding: 10px; 
+
+}
+
+
+
+
+#about-us {
+  width: 100%;
+  padding: 20px 0; 
+  font-family: "Afacad Flux", system-ui;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+.justifying {
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  #about-us h1 {
+    font-size: 2rem;
+  }
+
+  .row {
+    text-align: center;
+  }
+
+  .col-lg-6 {
+    text-align: left;
+    margin: 10px;
+  }
+
+  img {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* General hover effect for all icons */
+.footer .social-icons a:hover {
+  color: #ffc371;
+}
+
+.footer .social-icons a.fa-twitter:hover {
+  animation: fly 1s ease-in-out;
+  color: #1da1f2; 
+}
+
+/* Keyframe animation for "flying" effect */
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer .brand-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
